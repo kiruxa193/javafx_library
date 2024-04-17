@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.ParallelCamera?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" prefHeight="611.0" prefWidth="603.0" spacing="10" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.vojtechruzicka.javafxweaverexample.StorageController">
+    <ParallelCamera />
+
+    <TableView fx:id="storageTable" prefHeight="134.0" prefWidth="603.0" />
+
+    <HBox spacing="10" />
+
+    <HBox spacing="10">
+        <Button onAction="#selectAddOperation" text="Add Storage" />
+        <Button onAction="#selectUpdateOperation" text="Update Storage" />
+        <Button onAction="#selectDeleteOperation" text="Delete Storage" />
+        <Button text="Back to Main Menu" onAction="#goBackToMainMenu" />
+    </HBox>
+
+    <!-- Add Storage Fields -->
+    <HBox fx:id="addStorageFields" spacing="10" visible="false">
+        <!-- Add all TextFields for adding a storage here -->
+        <TextField fx:id="libraryNumberFieldAdd" promptText="Enter Library Number" />
+        <TextField fx:id="floorFieldAdd" promptText="Enter Floor" />
+        <TextField fx:id="capacityFieldAdd" promptText="Enter Capacity" />
+        <Button onAction="#handleAddStorage" text="Add Storage" />
+    </HBox>
+
+    <!-- Update Storage Fields -->
+    <HBox fx:id="updateStorageFields" spacing="10" visible="false">
+
+        <!-- Add ComboBox for selecting storage by StorageNumber -->
+        <Label text="Select Storage Number:" />
+        <ComboBox fx:id="storageNumberComboBox" promptText="Select Storage Number" />
+        <Button onAction="#handleSelectStorage" text="Select Storage" />
+        <!-- Add all TextFields for updating a storage here -->
+        <TextField fx:id="libraryNumberFieldUpdate" promptText="Enter Library Number" />
+        <TextField fx:id="floorFieldUpdate" promptText="Enter Floor" />
+        <TextField fx:id="capacityFieldUpdate" promptText="Enter Capacity" />
+        <Button onAction="#handleUpdateStorage" text="Update Storage" />
+    </HBox>
+
+    <!-- Delete Storage Fields -->
+    <HBox fx:id="deleteStorageFields" spacing="10" visible="false">
+        <!-- Add TextFields or ComboBox for specifying the storage to delete -->
+        <TextField fx:id="deleteStorageField" promptText="Enter Storage Number" />
+        <Button onAction="#handleDeleteStorage" text="Delete Storage" />
+    </HBox>
+
+    <ParallelCamera />
+</VBox>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.ParallelCamera?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" prefHeight="611.0" prefWidth="603.0" spacing="10" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.vojtechruzicka.javafxweaverexample.BookController">
+    <ParallelCamera />
+
+    <TableView fx:id="bookTable" prefHeight="134.0" prefWidth="603.0" />
+
+    <HBox spacing="10" />
+
+    <HBox spacing="10">
+        <Button onAction="#selectAddOperation" text="Add Book" />
+        <Button onAction="#selectUpdateOperation" text="Update Book" />
+        <Button onAction="#selectDeleteOperation" text="Delete Book" />
+        <Button text="Back to Main Menu" onAction="#goBackToMainMenu" />
+    </HBox>
+
+    <!-- Add Book Fields -->
+    <HBox fx:id="addBookFields" spacing="10" visible="false">
+        <!-- Add all TextFields for adding a book here -->
+        <TextField fx:id="bookCipherFieldAdd" promptText="Enter Book Cipher" />
+        <TextField fx:id="authorFieldAdd" promptText="Enter Author" />
+        <TextField fx:id="titleFieldAdd" promptText="Enter Title" />
+        <TextField fx:id="publisherFieldAdd" promptText="Enter Publisher" />
+        <TextField fx:id="publicationYearFieldAdd" promptText="Enter Publication Year" />
+        <TextField fx:id="priceFieldAdd" promptText="Enter Price" />
+        <TextField fx:id="acquisitionDateFieldAdd" promptText="Enter Acquisition Date" />
+        <TextField fx:id="storageNumberFieldAdd" promptText="Enter Storage Number" />
+        <Button onAction="#handleAddBook" text="Add Book" />
+    </HBox>
+
+    <!-- Update Book Fields -->
+    <HBox fx:id="updateBookFields" spacing="10" visible="false">
+
+        <!-- Add ComboBox for selecting book by BookNumber -->
+        <Label text="Select Book Number:" />
+        <ComboBox fx:id="bookNumberComboBox" promptText="Select Book Number" />
+        <Button onAction="#handleSelectBook" text="Select Book" />
+        <!-- Add all TextFields for updating a book here -->
+        <TextField fx:id="bookCipherFieldUpdate" promptText="Enter Book Cipher" />
+        <TextField fx:id="authorFieldUpdate" promptText="Enter Author" />
+        <TextField fx:id="titleFieldUpdate" promptText="Enter Title" />
+        <TextField fx:id="publisherFieldUpdate" promptText="Enter Publisher" />
+        <TextField fx:id="publicationYearFieldUpdate" promptText="Enter Publication Year" />
+        <TextField fx:id="priceFieldUpdate" promptText="Enter Price" />
+        <TextField fx:id="acquisitionDateFieldUpdate" promptText="Enter Acquisition Date" />
+        <TextField fx:id="storageNumberFieldUpdate" promptText="Enter Storage Number" />
+        <Button onAction="#handleUpdateBook" text="Update Book" />
+    </HBox>
+
+    <!-- Delete Book Fields -->
+    <HBox fx:id="deleteBookFields" spacing="10" visible="false">
+        <!-- Add TextFields or ComboBox for specifying the book to delete -->
+        <TextField fx:id="deleteBookField" promptText="Enter Book Number" />
+        <Button onAction="#handleDeleteBook" text="Delete Book" />
+    </HBox>
+
+    <ParallelCamera />
+</VBox>

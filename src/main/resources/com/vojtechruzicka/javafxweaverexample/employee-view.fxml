@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.ParallelCamera?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" prefHeight="611.0" prefWidth="603.0" spacing="10" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.vojtechruzicka.javafxweaverexample.EmployeeController">
+    <ParallelCamera />
+
+    <TableView fx:id="employeeTable" prefHeight="134.0" prefWidth="603.0" />
+
+    <HBox spacing="10" />
+
+    <HBox spacing="10">
+        <Button onAction="#selectAddOperation" text="Add Employee" />
+        <Button onAction="#selectUpdateOperation" text="Update Employee" />
+        <Button onAction="#selectDeleteOperation" text="Delete Employee" />
+        <Button text="Back to Main Menu" onAction="#goBackToMainMenu" />
+    </HBox>
+
+    <!-- Add Employee Fields -->
+    <HBox fx:id="addEmployeeFields" spacing="10" visible="false">
+        <!-- Add all TextFields for adding an employee here -->
+        <TextField fx:id="libraryNumberFieldAdd" promptText="Enter Library Number" />
+        <TextField fx:id="lastNameFieldAdd" promptText="Enter Last Name" />
+        <TextField fx:id="firstNameFieldAdd" promptText="Enter First Name" />
+        <TextField fx:id="middleNameFieldAdd" promptText="Enter Middle Name" />
+        <TextField fx:id="birthDateFieldAdd" promptText="Enter Birth Date" />
+        <TextField fx:id="positionFieldAdd" promptText="Enter Position" />
+        <TextField fx:id="educationFieldAdd" promptText="Enter Education" />
+        <Button onAction="#handleAddEmployee" text="Add Employee" />
+    </HBox>
+
+    <!-- Update Employee Fields -->
+    <HBox fx:id="updateEmployeeFields" spacing="10" visible="false">
+
+        <!-- Add ComboBox for selecting employee by EmployeeId -->
+        <Label text="Select Employee Id:" />
+        <ComboBox fx:id="employeeIdComboBox" promptText="Select Employee Id" />
+        <Button onAction="#handleSelectEmployee" text="Select Employee" />
+        <!-- Add all TextFields for updating an employee here -->
+        <TextField fx:id="libraryNumberFieldUpdate" promptText="Enter Library Number" />
+        <TextField fx:id="lastNameFieldUpdate" promptText="Enter Last Name" />
+        <TextField fx:id="firstNameFieldUpdate" promptText="Enter First Name" />
+        <TextField fx:id="middleNameFieldUpdate" promptText="Enter Middle Name" />
+        <TextField fx:id="birthDateFieldUpdate" promptText="Enter Birth Date" />
+        <TextField fx:id="positionFieldUpdate" promptText="Enter Position" />
+        <TextField fx:id="educationFieldUpdate" promptText="Enter Education" />
+        <Button onAction="#handleUpdateEmployee" text="Update Employee" />
+    </HBox>
+
+    <!-- Delete Employee Fields -->
+    <HBox fx:id="deleteEmployeeFields" spacing="10" visible="false">
+        <!-- Add TextFields or ComboBox for specifying the employee to delete -->
+        <TextField fx:id="deleteEmployeeField" promptText="Enter Employee Id" />
+        <Button onAction="#handleDeleteEmployee" text="Delete Employee" />
+    </HBox>
+
+    <ParallelCamera />
+</VBox>

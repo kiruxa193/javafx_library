@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.ParallelCamera?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" prefHeight="611.0" prefWidth="603.0" spacing="10" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.vojtechruzicka.javafxweaverexample.LibraryController">
+    <ParallelCamera />
+
+    <TableView fx:id="libraryTable" prefHeight="134.0" prefWidth="603.0" />
+
+    <HBox spacing="10" />
+
+    <HBox spacing="10">
+        <Button onAction="#selectAddOperation" text="Add Library" />
+        <Button onAction="#selectUpdateOperation" text="Update Library" />
+        <Button onAction="#selectDeleteOperation" text="Delete Library" />
+        <Button text="Back to Main Menu" onAction="#goBackToMainMenu" />
+    </HBox>
+
+    <!-- Add Library Fields -->
+    <HBox fx:id="addLibraryFields" spacing="10" visible="false">
+        <!-- Add all TextFields for adding a library here -->
+        <TextField fx:id="libraryNameFieldAdd" promptText="Enter Library Name" />
+        <TextField fx:id="addressFieldAdd" promptText="Enter Address" />
+        <TextField fx:id="bookCountFieldAdd" promptText="Enter Book Count" />
+        <Button onAction="#handleAddLibrary" text="Add Library" />
+    </HBox>
+
+    <!-- Update Library Fields -->
+    <HBox fx:id="updateLibraryFields" spacing="10" visible="false">
+
+        <!-- Add ComboBox for selecting library by LibraryNumber -->
+        <Label text="Select Library Number:" />
+        <ComboBox fx:id="libraryNumberComboBox" promptText="Select Library Number" />
+        <Button onAction="#handleSelectLibrary" text="Select Library" />
+        <!-- Add all TextFields for updating a library here -->
+        <TextField fx:id="libraryNameFieldUpdate" promptText="Enter Library Name" />
+        <TextField fx:id="addressFieldUpdate" promptText="Enter Address" />
+        <TextField fx:id="bookCountFieldUpdate" promptText="Enter Book Count" />
+        <Button onAction="#handleUpdateLibrary" text="Update Library" />
+    </HBox>
+
+    <!-- Delete Library Fields -->
+    <HBox fx:id="deleteLibraryFields" spacing="10" visible="false">
+        <!-- Add TextFields or ComboBox for specifying the library to delete -->
+        <TextField fx:id="deleteLibraryField" promptText="Enter Library Number" />
+        <Button onAction="#handleDeleteLibrary" text="Delete Library" />
+    </HBox>
+
+    <ParallelCamera />
+</VBox>
